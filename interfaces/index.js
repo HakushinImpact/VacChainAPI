@@ -2,7 +2,7 @@ const blockChainAPI = require('./blockchain');
 const mongoClientAPI = require('./mongoClient');
 
 const insertEntry = async entry => {
-  const entry_id = await mongoClientAPI.insertDocument({ data: entry });
+  const entry_id = await mongoClientAPI.insertDocument(entry);
 
   blockChainAPI.addBlock(entry_id);
 
@@ -12,7 +12,7 @@ const insertEntry = async entry => {
 const updateEntry = async (id, entry) => {
   const status = await mongoClientAPI.updateDocument(id, entry);
 
-  blockChainAPI.addBlock(entry_id);
+  blockChainAPI.addBlock(id);
 
   return status;
 };
@@ -23,15 +23,20 @@ const getEntry = async id => {
   return entry;
 };
 
-const getAllEntries = async () => {
-  const entries = await mongoClientAPI.getAllDocuments();
+const getEntries = async (filter, limit) => {
+  const entries = await mongoClientAPI.getDocuments(filter, limit);
 
   return entries;
+};
+
+const getBlockchain = () => {
+  return blockChainAPI.getAllBlocks();
 };
 
 module.exports = {
   insertEntry,
   updateEntry,
   getEntry,
-  getAllEntries
+  getAllEntries,
+  getBlockchain
 };

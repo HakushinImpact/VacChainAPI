@@ -79,6 +79,13 @@ app.get('/getEntries', async (req, res) => {
 //   console.log(chalk.green(`[GET] /removeEntry ${res.statusCode}`));
 // });
 
+//count entries
+app.get('/countEntries', async (req, res) => {
+  const count = await VacChainAPI.countEntries();
+
+  res.status(200).send(count);
+});
+
 app.get('/getBlockchain', async (req, res) => {
   const validBlockchain = VacChainAPI.validateBlockchain();
   const result = VacChainAPI.getBlockchain();

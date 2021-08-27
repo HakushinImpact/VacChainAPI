@@ -135,10 +135,31 @@ const getDocuments = async (
   return documents;
 };
 
+/**
+ * Counts the number of documents in a MongoDB collection, with an optional filter
+ * @param {string} collection - the MongoDB collection to retrieve the documents from
+ * @param {Object} filter - an object or array of objects to be used as a filter
+ * @returns 0 if connection failed, else the number of documents
+ */
+const countDocuments = async (
+  collection = mongoDB_config.collection,
+  filter = {}
+) => {
+  const conn = await mongo_client.connect();
+  if (!conn.isConnected()) {
+    console.log('[MongoDB] COUNT: Connection failed.');
+    return 0;
+  }
+  const count = await conn.db().collection(collection).countDocuments(filter);
+
+  return count;
+};
+
 module.exports = {
   insertDocument,
   // deleteDocument,
   updateDocument,
   getDocument,
-  getDocuments
+  getDocuments,
+  countDocuments
 };

@@ -48,6 +48,12 @@ const getEntries = async (filter, limit) => {
   return entries;
 };
 
+const countEntries = async () => {
+  const count = await mongoClientAPI.countDocuments();
+
+  return count;
+};
+
 const getBlockchain = () => {
   return blockChainAPI.getAllBlocks();
 };
@@ -62,6 +68,7 @@ module.exports = {
   getEntry,
   getEntries,
   // removeEntry,
+  countEntries,
   getBlockchain,
   validateBlockchain
 };

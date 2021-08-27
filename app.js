@@ -46,7 +46,7 @@ app.get('/get', async (req, res) => {
 });
 
 app.get('/getAll', async (req, res) => {
-  const entries = await VacChainAPI.getAllEntries();
+  const entries = await VacChainAPI.getEntries();
 
   if (entries === false) {
     res.status(404).send('Not found');
@@ -55,9 +55,8 @@ app.get('/getAll', async (req, res) => {
   }
 });
 
-// Validates if the blockchain has not been tampered with
-app.get('/validate', async (req, res) => {
-  const result = blockChainAPI.isChainValid();
+app.get('/getBlockchain', async (req, res) => {
+  const result = VacChainAPI.getAllBlocks();
   res.send(result);
 });
 

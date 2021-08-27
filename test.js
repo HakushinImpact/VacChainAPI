@@ -61,8 +61,8 @@ const data_struct = {
   ],
   voucher_info: [
     {
-      name: '',
-      discount: ''
+      name: 'Jalibi Not Makdo',
+      discount: '10 PHP DSCT ON YAM BURGIR'
     }
   ]
 };
@@ -87,12 +87,6 @@ sampleEntry1.vaccine_info.name = "Sinovac CoronaVac";
 sampleEntry1.vaccine_info.dosage = '2';
 sampleEntry1.vaccine_info.batch_no = '12345';
 sampleEntry1.vaccine_info.health_facility = 'RHU Kalibo';
-sampleEntry1.vaccine_info.vaccinator.last_name = "Ruiz";
-sampleEntry1.vaccine_info.vaccinator.first_name = "Emmanuelle";
-sampleEntry1.vaccine_info.vaccinator.middle_name = "Lagoramatasa";
-sampleEntry1.voucher_info.name = 'Jalibi Not Makdo';
-sampleEntry1.voucher_info.discount = '10 PHP DSCT ON YAM BURGIR';
-
 
 const sampleEntry2 = { ...data_struct };
 sampleEntry2.philhealth_info.isMember = true;
@@ -115,11 +109,6 @@ sampleEntry2.vaccine_info.name = "Sinovac CoronaVac";
 sampleEntry2.vaccine_info.dosage = '2';
 sampleEntry2.vaccine_info.batch_no = '12346';
 sampleEntry2.vaccine_info.health_facility = 'RHU Kalibo';
-sampleEntry2.vaccine_info.vaccinator.last_name = "Ruiz";
-sampleEntry2.vaccine_info.vaccinator.first_name = "Emmanuelle";
-sampleEntry2.vaccine_info.vaccinator.middle_name = "Lagoramatasa";
-sampleEntry2.voucher_info.name = 'Jalibi Not Makdo';
-sampleEntry2.voucher_info.discount = '10 PHP DSCT ON YAM BURGIR';
 
 const sampleEntry3 = { ...data_struct };
 sampleEntry3.philhealth_info.isMember = true;
@@ -142,11 +131,6 @@ sampleEntry3.vaccine_info.name = "Sinovac CoronaVac";
 sampleEntry3.vaccine_info.dosage = '1';
 sampleEntry3.vaccine_info.batch_no = '15846';
 sampleEntry3.vaccine_info.health_facility = 'RHU Kalibo';
-sampleEntry3.vaccine_info.vaccinator.last_name = "Ruiz";
-sampleEntry3.vaccine_info.vaccinator.first_name = "Emmanuelle";
-sampleEntry3.vaccine_info.vaccinator.middle_name = "Lagoramatasa";
-sampleEntry3.voucher_info.name = 'Jalibi Not Makdo';
-sampleEntry3.voucher_info.discount = '10 PHP DSCT ON YAM BURGIR';
 
 const sampleEntry4 = { ...data_struct };
 sampleEntry4.philhealth_info.isMember = true;
@@ -169,11 +153,7 @@ sampleEntry4.vaccine_info.name = "Johnson & Johnson (Jannsen)";
 sampleEntry4.vaccine_info.dosage = '1';
 sampleEntry4.vaccine_info.batch_no = '15847';
 sampleEntry4.vaccine_info.health_facility = 'RHU Kalibo';
-sampleEntry4.vaccine_info.vaccinator.last_name = "Ruiz";
-sampleEntry4.vaccine_info.vaccinator.first_name = "Emmanuelle";
-sampleEntry4.vaccine_info.vaccinator.middle_name = "Lagoramatasa";
-sampleEntry4.voucher_info.name = 'Jalibi Not Makdo';
-sampleEntry4.voucher_info.discount = '10 PHP DSCT ON YAM BURGIR';
+
 
 const sampleEntry5 = { ...data_struct };
 sampleEntry5.philhealth_info.isMember = true;
@@ -201,11 +181,7 @@ sampleEntry5.vaccine_info.name = "Sinovac CoronaVac";
 sampleEntry5.vaccine_info.dosage = '1';
 sampleEntry5.vaccine_info.batch_no = '14147';
 sampleEntry5.vaccine_info.health_facility = 'RHU Kalibo';
-sampleEntry5.vaccine_info.vaccinator.last_name = "Ruiz";
-sampleEntry5.vaccine_info.vaccinator.first_name = "Emmanuelle";
-sampleEntry5.vaccine_info.vaccinator.middle_name = "Lagoramatasa";
-sampleEntry5.voucher_info.name = 'Jalibi Not Makdo';
-sampleEntry5.voucher_info.discount = '10 PHP DSCT ON YAM BURGIR';
+
 
 const sampleEntry6 = { ...data_struct };
 sampleEntry6.philhealth_info.isMember = false;
@@ -225,11 +201,7 @@ sampleEntry6.vaccine_info.name = "Moderna";
 sampleEntry6.vaccine_info.dosage = '2';
 sampleEntry6.vaccine_info.batch_no = '25847';
 sampleEntry6.vaccine_info.health_facility = 'RHU Kalibo';
-sampleEntry6.vaccine_info.vaccinator.last_name = "Ruiz";
-sampleEntry6.vaccine_info.vaccinator.first_name = "Emmanuelle";
-sampleEntry6.vaccine_info.vaccinator.middle_name = "Lagoramatasa";
-sampleEntry6.voucher_info.name = 'Jalibi Not Makdo';
-sampleEntry6.voucher_info.discount = '10 PHP DSCT ON YAM BURGIR';
+
 
 const sampleEntry7 = { ...data_struct };
 sampleEntry7.philhealth_info.isMember = false;
@@ -255,12 +227,6 @@ sampleEntry7.health_information.medical_history.allergies = ['Pollen Allegy']
 sampleEntry7.vaccine_info.name = "Johnson & Johnson (Jannsen)";
 sampleEntry7.vaccine_info.dosage = '1';
 sampleEntry7.vaccine_info.batch_no = '11267';
-sampleEntry7.vaccine_info.health_facility = 'RHU Kalibo';
-sampleEntry7.vaccine_info.vaccinator.last_name = "Ruiz";
-sampleEntry7.vaccine_info.vaccinator.first_name = "Emmanuelle";
-sampleEntry7.vaccine_info.vaccinator.middle_name = "Lagoramatasa";
-sampleEntry7.voucher_info.name = 'Jalibi Not Makdo';
-sampleEntry7.voucher_info.discount = '10 PHP DSCT ON YAM BURGIR';
 
 const sampleEntry8 = { ...data_struct };
 sampleEntry8.philhealth_info.isMember = false;
@@ -277,11 +243,6 @@ sampleEntry8.vaccine_info.name = "Sinovac CoronaVac";
 sampleEntry8.vaccine_info.dosage = '1';
 sampleEntry8.vaccine_info.batch_no = '15947';
 sampleEntry8.vaccine_info.health_facility = 'RHU Kalibo';
-sampleEntry8.vaccine_info.vaccinator.last_name = "Ruiz";
-sampleEntry8.vaccine_info.vaccinator.first_name = "Emmanuelle";
-sampleEntry8.vaccine_info.vaccinator.middle_name = "Lagoramatasa";
-sampleEntry8.voucher_info.name = 'Jalibi Not Makdo';
-sampleEntry8.voucher_info.discount = '10 PHP DSCT ON YAM BURGIR';
 
 const sampleEntry9 = { ...data_struct };
 sampleEntry9.philhealth_info.isMember = false;
@@ -301,11 +262,6 @@ sampleEntry9.vaccine_info.name = "Sinovac CoronaVac";
 sampleEntry9.vaccine_info.dosage = '2';
 sampleEntry9.vaccine_info.batch_no = '25888';
 sampleEntry9.vaccine_info.health_facility = 'RHU Kalibo';
-sampleEntry9.vaccine_info.vaccinator.last_name = "Ruiz";
-sampleEntry9.vaccine_info.vaccinator.first_name = "Emmanuelle";
-sampleEntry9.vaccine_info.vaccinator.middle_name = "Lagoramatasa";
-sampleEntry9.voucher_info.name = 'Jalibi Not Makdo';
-sampleEntry9.voucher_info.discount = '10 PHP DSCT ON YAM BURGIR';
 
 const sampleEntry10 = { ...data_struct };
 sampleEntry10.philhealth_info.isMember = false;
@@ -325,11 +281,6 @@ sampleEntry10.vaccine_info.name = "Sinovac CoronaVac";
 sampleEntry10.vaccine_info.dosage = '1';
 sampleEntry10.vaccine_info.batch_no = '19997';
 sampleEntry10.vaccine_info.health_facility = 'RHU Kalibo';
-sampleEntry10.vaccine_info.vaccinator.last_name = "Ruiz";
-sampleEntry10.vaccine_info.vaccinator.first_name = "Emmanuelle";
-sampleEntry10.vaccine_info.vaccinator.middle_name = "Lagoramatasa";
-sampleEntry10.voucher_info.name = 'Jalibi Not Makdo';
-sampleEntry10.voucher_info.discount = '10 PHP DSCT ON YAM BURGIR';
 
 const test = async () => {
   await axios

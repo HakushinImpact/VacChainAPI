@@ -37,6 +37,6 @@ module.exports = {
   insertEntry,
   updateEntry,
   getEntry,
-  getAllEntries,
+  getEntries,
   getBlockchain
 };

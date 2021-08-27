@@ -33,10 +33,16 @@ const getBlockchain = () => {
   return blockChainAPI.getAllBlocks();
 };
 
+const validateBlockchain = () => {
+  return blockChainAPI.isChainValid();
+};
+
 module.exports = {
   insertEntry,
   updateEntry,
   getEntry,
   getEntries,
-  getBlockchain
+  removeEntry,
+  getBlockchain,
+  validateBlockchain,
 };

@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const express = require('express');
 const app = express();
 const port = 5000;
@@ -15,7 +16,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.post('/insert', async (req, res) => {
+app.post('/insertEntry', async (req, res) => {
   const isSuccess = await VacChainAPI.insertEntry(req.body);
 
   if (!isSuccess) {
@@ -23,9 +24,11 @@ app.post('/insert', async (req, res) => {
   } else {
     res.status(200).send('OK');
   }
+
+  console.log(chalk.green(`[POST] /insertEntry ${res.statusCode}`));
 });
 
-app.post('/update', async (req, res) => {
+app.post('/updateEntry', async (req, res) => {
   const isSuccess = await VacChainAPI.updateEntry(req.body.id, req.body.data);
 
   if (!isSuccess) {
@@ -33,9 +36,11 @@ app.post('/update', async (req, res) => {
   } else {
     res.status(200).send('OK');
   }
+
+  console.log(chalk.green(`[POST] /updateEntry ${res.statusCode}`));
 });
 
-app.get('/get', async (req, res) => {
+app.get('/getEntry', async (req, res) => {
   const entry = await VacChainAPI.getEntry(req.query.id);
 
   if (entry === false) {
@@ -43,9 +48,11 @@ app.get('/get', async (req, res) => {
   } else {
     res.status(200).send(entry);
   }
+
+  console.log(chalk.green(`[GET] /getEntry ${res.statusCode}`));
 });
 
-app.get('/getAll', async (req, res) => {
+app.get('/getEntries', async (req, res) => {
   const entries = await VacChainAPI.getEntries(
     req.query.filter,
     req.query.limit
@@ -56,13 +63,28 @@ app.get('/getAll', async (req, res) => {
   } else {
     res.status(200).send(entries);
   }
+
+  console.log(chalk.green(`[GET] /getEntries ${res.statusCode}`));
 });
 
 app.get('/getBlockchain', async (req, res) => {
-  const result = VacChainAPI.getBlockchain();
-  res.send(result);
+  const validBlockchain = VacChainAPI.validateBlockchain();
+
+  if (validBlockchain) {
+    const result = VacChainAPI.getBlockchain();
+    res.status(200).send(result);
+  } else {
+    res.status(404).send('Not found');
+  }
+
+  console.log(chalk.green(`[GET] /getBlockChain ${res.statusCode}`));
 });
 
 app.listen(port, () => {
-  console.log(`CORS-enabled web server listening at port ${port}`);
+  console.log(
+    chalk.blue(
+      `=================VacChainAPI v.1.0================
+  CORS-enabled web server listening at port ${port}`
+    )
+  );
 });

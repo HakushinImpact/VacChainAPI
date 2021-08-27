@@ -5,6 +5,9 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "mongodb": "^4.1.1"
+    "mongodb": "^3.6.11"
+  },
+  "devDependencies": {
+    "axios": "^0.21.1"
   }
 }

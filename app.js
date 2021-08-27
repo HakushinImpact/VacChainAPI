@@ -22,7 +22,7 @@ app.post('/insertEntry', async (req, res) => {
   if (entry_id === false) {
     res.status(404).send('Not found');
   } else {
-    res.status(200).send('OK');
+    res.status(200).send(entry_id);
   }
 
   console.log(chalk.green(`[POST] /insertEntry ${res.statusCode}`));

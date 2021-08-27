@@ -24,7 +24,7 @@ const getEntry = async id => {
 };
 
 const getEntries = async (filter, limit) => {
-  const entries = await mongoClientAPI.getDocuments(filter, limit);
+  const entries = await mongoClientAPI.getDocuments(filter, parseInt(limit));
 
   return entries;
 };

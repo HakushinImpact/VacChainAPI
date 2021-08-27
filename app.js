@@ -17,12 +17,12 @@ app.use(function (req, res, next) {
 });
 
 app.post('/insertEntry', async (req, res) => {
-  const isSuccess = await VacChainAPI.insertEntry(req.body);
+  const entry_id = await VacChainAPI.insertEntry(req.body);
 
-  if (!isSuccess) {
+  if (entry_id === false) {
     res.status(404).send('Not found');
   } else {
-    res.status(200).send('OK');
+    res.status(200).send(entry_id);
   }
 
   console.log(chalk.green(`[POST] /insertEntry ${res.statusCode}`));
@@ -80,10 +80,11 @@ app.get('/getEntries', async (req, res) => {
 // });
 
 //count entries
-app.get('/countEntries', async (req, res) => {
-  const count = await VacChainAPI.countEntries();
+app.post('/countEntries', async (req, res) => {
+  const count = await VacChainAPI.countEntries(req.body.filter);
 
-  res.status(200).send(count);
+  res.status(200).send(`${count}`);
+  console.log(chalk.green(`[POST] /countEntries ${res.statusCode}`));
 });
 
 app.get('/getBlockchain', async (req, res) => {

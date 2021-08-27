@@ -98,6 +98,12 @@ const test = async () => {
       console.dir(response.data, { depth: null });
     });
 
+  await axios
+    .get('http://localhost:5000/getEntry?id=612893f6ba0c3925102130f6')
+    .then(response => {
+      console.dir(response.data, { depth: null });
+    });
+
   await axios.get('http://localhost:5000/getEntries').then(response => {
     console.dir(response.data, { depth: null });
   });
@@ -105,12 +111,6 @@ const test = async () => {
   await axios.get('http://localhost:5000/getBlockchain').then(response => {
     console.dir(response.data, { depth: null });
   });
-
-  await axios
-    .get('http://localhost:5000/getEntry?id=612893f6ba0c3925102130f6')
-    .then(response => {
-      console.dir(response.data, { depth: null });
-    });
 
   await axios
     .post('http://localhost:5000/countEntries', {

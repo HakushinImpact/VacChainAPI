@@ -36,7 +36,7 @@ const insertDocument = async (
     `[MongoDB] INSERT: Successfully inserted document to collection "${collection}"`
   );
 
-  return document._id;
+  return document._id.toString();
 };
 
 /**
@@ -150,6 +150,7 @@ const countDocuments = async (
     console.log('[MongoDB] COUNT: Connection failed.');
     return 0;
   }
+
   const count = await conn.db().collection(collection).countDocuments(filter);
 
   return count;

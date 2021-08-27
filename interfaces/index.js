@@ -8,7 +8,7 @@ const insertEntry = async entry => {
     blockChainAPI.addBlock({ id: entry_id, operation: 'insert' });
   }
 
-  return entry_id && true;
+  return entry_id;
 };
 
 const updateEntry = async (id, entry) => {

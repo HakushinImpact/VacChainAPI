@@ -4,21 +4,40 @@ const mongoClientAPI = require('./mongoClient');
 const insertEntry = async entry => {
   const entry_id = await mongoClientAPI.insertDocument(entry);
 
-  blockChainAPI.addBlock(entry_id);
+  if (entry_id) {
+    blockChainAPI.addBlock({ id: entry_id, operation: 'insert' });
+  }
 
   return entry_id && true;
 };
 
 const updateEntry = async (id, entry) => {
-  const status = await mongoClientAPI.updateDocument(id, entry);
+  const success = await mongoClientAPI.updateDocument(id, entry);
 
-  blockChainAPI.addBlock(id);
+  if (success) {
+    blockChainAPI.addBlock({ id: id, operation: 'update' });
+  }
 
-  return status;
+  return success;
 };
 
 const getEntry = async id => {
   const entry = await mongoClientAPI.getDocument(id);
+
+  // API returns false upon failure
+  if (entry !== false) {
+    blockChainAPI.addBlock({ id, operation: 'get' });
+  }
+
+  return entry;
+};
+
+const removeEntry = async id => {
+  const success = await mongoClientAPI.deleteDocument(id);
+
+  if (success) {
+    blockChainAPI.addBlock({ id, operation: 'delete' });
+  }
 
   return entry;
 };
@@ -44,5 +63,5 @@ module.exports = {
   getEntries,
   removeEntry,
   getBlockchain,
-  validateBlockchain,
+  validateBlockchain
 };

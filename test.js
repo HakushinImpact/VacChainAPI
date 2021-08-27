@@ -21,6 +21,7 @@ const sampleEntry = {
       civil_status: '',
       employment: {
         status: '',
+        work: '',
         employer_name: '',
         company_name: '',
         company_address: '',
@@ -36,25 +37,11 @@ const sampleEntry = {
       classification: ''
     },
     has_comorbidity: true,
-    comorbidity: [],
+    comorbidity: '',
     is_pregnant: true,
     medical_history: {
-      disease: {
-        diabetes: true,
-        bronchial_asthma: true,
-        hypertension: true,
-        cancer: true,
-        others: []
-      },
-      allergies: {
-        drug: true,
-        food: true,
-        insect: true,
-        latex: true,
-        mold: true,
-        pet: true,
-        pollen: true
-      }
+      disease: [],
+      allergies: []
     }
   },
   vaccine_info: [
@@ -99,6 +86,7 @@ const sampleEntry2 = {
       civil_status: '',
       employment: {
         status: '',
+        work: '',
         employer_name: '',
         company_name: '',
         company_address: '',
@@ -114,25 +102,11 @@ const sampleEntry2 = {
       classification: ''
     },
     has_comorbidity: true,
-    comorbidity: [],
+    comorbidity: '',
     is_pregnant: true,
     medical_history: {
-      disease: {
-        diabetes: true,
-        bronchial_asthma: true,
-        hypertension: true,
-        cancer: true,
-        others: []
-      },
-      allergies: {
-        drug: true,
-        food: true,
-        insect: true,
-        latex: true,
-        mold: true,
-        pet: true,
-        pollen: true
-      }
+      disease: [],
+      allergies: []
     }
   },
   vaccine_info: [

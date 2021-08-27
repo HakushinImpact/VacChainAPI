@@ -21,25 +21,22 @@ const insertDocument = async (
     return false;
   }
 
-  const mongoDB_collection = conn.db().collection(collection);
+  // const mongoDB_collection = ;
   //   mongoDB_collection.createIndex({ id: 1 }, { unique: true }); // create unique index on id
 
   try {
-    mongoDB_collection.insertOne(document, err => {
-      if (err) {
-        throw new Error();
-      } else {
-        console.log(
-          `[MongoDB] INSERT: Successfully inserted document to collection "${collection}"`
-        );
-        return document._id.toString();
-      }
-    });
+    await conn.db().collection(collection).insertOne(document);
   } catch (error) {
     console.log('[MongoDB] INSERT: Item was not inserted. Possible duplicate.');
 
     return false;
   }
+
+  console.log(
+    `[MongoDB] INSERT: Successfully inserted document to collection "${collection}"`
+  );
+
+  return document._id;
 };
 
 /**
@@ -118,7 +115,7 @@ const getDocument = async (id, collection = mongoDB_config.collection) => {
 const getDocuments = async (
   collection = mongoDB_config.collection,
   filter = {},
-  limit
+  limit = 15
 ) => {
   const conn = await mongo_client.connect();
   if (!conn.isConnected()) {

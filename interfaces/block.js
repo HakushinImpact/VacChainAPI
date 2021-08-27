@@ -1,23 +1,20 @@
 const crypto = require('crypto');
 
 module.exports = class Block {
-  constructor(index, previousHash, data) {
+  constructor(index, previousHash, timestamp, data) {
     this.index = index;
     this.data = data;
-    this.timestamp = Date.now();
-    this.hash = this.computeHash();
+    this.timestamp = timestamp;
     this.previousHash = previousHash;
+    this.hash = this.computeHash();
   }
 
   computeHash() {
-    return crypto
+    const hash = crypto
       .createHash('sha256')
-      .update(
-        this.index +
-          this.previousHash +
-          this.timestamp +
-          JSON.stringify(this.data)
-      )
+      .update(this.index + this.previousHash + this.timestamp + this.data)
       .digest('hex');
+
+    return hash;
   }
 };

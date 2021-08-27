@@ -32,15 +32,15 @@ const getEntry = async id => {
   return entry;
 };
 
-const removeEntry = async id => {
-  const success = await mongoClientAPI.deleteDocument(id);
+// const removeEntry = async id => {
+//   const success = await mongoClientAPI.deleteDocument(id);
 
-  if (success) {
-    blockChainAPI.addBlock({ id, operation: 'delete' });
-  }
+//   if (success) {
+//     blockChainAPI.addBlock({ id, operation: 'remove' });
+//   }
 
-  return entry;
-};
+//   return success;
+// };
 
 const getEntries = async (filter, limit) => {
   const entries = await mongoClientAPI.getDocuments(filter, parseInt(limit));
@@ -61,7 +61,7 @@ module.exports = {
   updateEntry,
   getEntry,
   getEntries,
-  removeEntry,
+  // removeEntry,
   getBlockchain,
   validateBlockchain
 };

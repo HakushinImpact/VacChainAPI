@@ -45,19 +45,22 @@ const insertDocument = async (
  * @param {string} id - id of object to be deleted from the specified collection
  * @returns resolves to `true` upon success, else `false`
  */
-const deleteDocument = async (id, collection = mongoDB_config.collection) => {
-  const conn = await mongo_client.connect();
-  if (!conn.isConnected() || !id) {
-    return false;
-  }
 
-  await conn
-    .db()
-    .collection(collection)
-    .deleteOne({ _id: ObjectId(id) });
+// FOR FUTURE IMPLEMENTATION
+// const deleteDocument = async (id, collection = mongoDB_config.collection) => {
+//   const conn = await mongo_client.connect();
+//   if (!conn.isConnected() || !id) {
+//     return false;
+//   }
 
-  return true;
-};
+//   const result = await conn
+//     .db()
+//     .collection(collection)
+//     .deleteOne({ _id: ObjectId(id) });
+
+//   console.log(result);
+//   return result && true;
+// };
 
 /**
  * Updates a document from a MongoDB collection from a given `id` and a new document
@@ -80,7 +83,7 @@ const updateDocument = async (
   const document = await conn
     .db()
     .collection(collection)
-    .findOneAndUpdate({ _id: ObjectId(id) }, data);
+    .updateOne({ _id: ObjectId(id) }, { $set: data });
 
   return document && true;
 };
@@ -134,7 +137,7 @@ const getDocuments = async (
 
 module.exports = {
   insertDocument,
-  deleteDocument,
+  // deleteDocument,
   updateDocument,
   getDocument,
   getDocuments

@@ -67,6 +67,18 @@ app.get('/getEntries', async (req, res) => {
   console.log(chalk.green(`[GET] /getEntries ${res.statusCode}`));
 });
 
+// app.get('/removeEntry', async (req, res) => {
+//   const isSuccess = await VacChainAPI.removeEntry(req.params.id);
+
+//   if (!isSuccess) {
+//     res.status(404).send('Removal failed.');
+//   } else {
+//     res.status(200).send('OK');
+//   }
+
+//   console.log(chalk.green(`[GET] /removeEntry ${res.statusCode}`));
+// });
+
 app.get('/getBlockchain', async (req, res) => {
   const validBlockchain = VacChainAPI.validateBlockchain();
   const result = VacChainAPI.getBlockchain();

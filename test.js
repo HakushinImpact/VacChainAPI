@@ -6,7 +6,7 @@ const sampleEntry = {
   philhealth_info: {
     isMember: true,
     number: 1234,
-    category: 'A0'
+    category: 'OFW'
   },
   personal_info: {
     first_name: 'Dummy',
@@ -29,15 +29,23 @@ const sampleEntry = {
     }
   },
   health_information: {
-    has_interaction: true,
-    is_diagnosed: true,
-    date: Date.now(),
-    classification: '',
+    covid: {
+      has_interaction: true,
+      is_diagnosed: true,
+      diagnosis_date: Date.now(),
+      classification: '',
+    },
     has_comorbidity: true,
     comorbidity: [],
     is_pregnant: true,
     medical_history: {
-      history: [],
+      disease: {
+        diabetes: true,
+        bronchial_asthma: true,
+        hypertension: true,
+        cancer: true,
+        others: []
+      },
       allergies: {
         drug: true,
         food: true,
@@ -52,7 +60,16 @@ const sampleEntry = {
   vaccine_info: [
     {
       name: '',
-      date: ''
+      date_of_vaccination: '',
+      dosage: '1',
+      batch_no: '',
+      health_facility: '',
+      vaccinator: {
+        last_name: '',
+        first_name: '',
+        middle_name: '',
+        suffix: '',
+      }
     }
   ],
   voucher_info: [
@@ -67,7 +84,7 @@ const sampleEntry2 = {
   philhealth_info: {
     isMember: true,
     number: 1234,
-    category: 'A0'
+    category: 'OFW'
   },
   personal_info: {
     first_name: 'Dummy2',
@@ -90,15 +107,23 @@ const sampleEntry2 = {
     }
   },
   health_information: {
-    has_interaction: true,
-    is_diagnosed: true,
-    date: Date.now(),
-    classification: '',
+    covid: {
+      has_interaction: true,
+      is_diagnosed: true,
+      diagnosis_date: Date.now(),
+      classification: '',
+    },
     has_comorbidity: true,
     comorbidity: [],
     is_pregnant: true,
     medical_history: {
-      history: [],
+      disease: {
+        diabetes: true,
+        bronchial_asthma: true,
+        hypertension: true,
+        cancer: true,
+        others: []
+      },
       allergies: {
         drug: true,
         food: true,
@@ -113,7 +138,16 @@ const sampleEntry2 = {
   vaccine_info: [
     {
       name: '',
-      date: ''
+      date_of_vaccination: '',
+      dosage: '1',
+      batch_no: '',
+      health_facility: '',
+      vaccinator: {
+        last_name: '',
+        first_name: '',
+        middle_name: '',
+        suffix: '',
+      }
     }
   ],
   voucher_info: [

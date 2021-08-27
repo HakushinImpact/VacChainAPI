@@ -69,10 +69,10 @@ app.get('/getEntries', async (req, res) => {
 
 app.get('/getBlockchain', async (req, res) => {
   const validBlockchain = VacChainAPI.validateBlockchain();
+  const result = VacChainAPI.getBlockchain();
 
-  if (validBlockchain) {
-    const result = VacChainAPI.getBlockchain();
-    res.status(200).send(result);
+  if (result) {
+    res.status(200).send({ isValid: validBlockchain, blocks: result });
   } else {
     res.status(404).send('Not found');
   }

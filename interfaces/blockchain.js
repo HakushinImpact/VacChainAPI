@@ -6,7 +6,7 @@ class BlockChain {
   }
 
   createGenesisBlock() {
-    return new Block(0, '0', 'Genesis Block');
+    return new Block(0, '0', Date.now().toString(), 'Genesis Block');
   }
 
   getLatestBlock() {
@@ -30,16 +30,18 @@ class BlockChain {
     const newBlock = new Block(
       this.chain.length,
       this.getLatestBlock().hash,
+      Date.now().toString(),
       data
     );
+
     this.chain.push(newBlock);
   }
 
   isChainValid() {
-    for (let i = 0; i < this.chain.length; i++) {
+    for (let i = 1; i < this.chain.length; i++) {
       if (this.chain[i].hash !== this.chain[i].computeHash()) {
         return false;
-      } else if (i > 0 && this.chain[i].prevHash !== this.chain[i - 1].hash) {
+      } else if (i > 0 && this.chain[i].previousHash !== this.chain[i - 1].hash) {
         return false;
       }
     }

@@ -16,27 +16,47 @@ app.use(function (req, res, next) {
 });
 
 app.post('/insert', async (req, res) => {
-  await VacChainAPI.insertEntry(req.body);
-  res.status(200).send('OK');
+  const isSuccess = await VacChainAPI.insertEntry(req.body);
+
+  if (!isSuccess) {
+    res.status(404).send('Not found');
+  } else {
+    res.status(200).send('OK');
+  }
 });
 
 app.post('/update', async (req, res) => {
-  await VacChainAPI.updateEntry(req.body.id, req.body.data);
-  res.status(200).send('OK');
+  const isSuccess = await VacChainAPI.updateEntry(req.body.id, req.body.data);
+
+  if (!isSuccess) {
+    res.status(404).send('Not found');
+  } else {
+    res.status(200).send('OK');
+  }
 });
 
 app.get('/get', async (req, res) => {
   const entry = await VacChainAPI.getEntry(req.query.id);
-  res.status(200).send(entry);
+
+  if (entry === false) {
+    res.status(404).send('Not found');
+  } else {
+    res.status(200).send(entry);
+  }
 });
 
 app.get('/getAll', async (req, res) => {
   const entries = await VacChainAPI.getAllEntries();
-  res.status(200).send(entries);
+
+  if (entries === false) {
+    res.status(404).send('Not found');
+  } else {
+    res.status(200).send(entries);
+  }
 });
 
-app.get('/validator', async (req, res) => {
-  const hash = req.query.hash;
+// Validates if the blockchain has not been tampered with
+app.get('/validate', async (req, res) => {
   const result = blockChainAPI.isChainValid();
   res.send(result);
 });

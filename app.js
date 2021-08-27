@@ -46,7 +46,10 @@ app.get('/get', async (req, res) => {
 });
 
 app.get('/getAll', async (req, res) => {
-  const entries = await VacChainAPI.getEntries();
+  const entries = await VacChainAPI.getEntries(
+    req.query.filter,
+    req.query.limit
+  );
 
   if (entries === false) {
     res.status(404).send('Not found');
@@ -56,7 +59,7 @@ app.get('/getAll', async (req, res) => {
 });
 
 app.get('/getBlockchain', async (req, res) => {
-  const result = VacChainAPI.getAllBlocks();
+  const result = VacChainAPI.getBlockchain();
   res.send(result);
 });
 

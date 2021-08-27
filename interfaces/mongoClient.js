@@ -153,8 +153,6 @@ const countDocuments = async (
 
   const count = await conn.db().collection(collection).countDocuments(filter);
 
-  conn.close();
-
   return count;
 };
 

@@ -3,7 +3,7 @@ const crypto = require('crypto');
 module.exports = class Block {
   constructor(index, previousHash, data) {
     this.index = index;
-    this.hash = null;
+    this.hash = this.computeHash();
     this.previousHash = previousHash;
     this.timestamp = Date.now();
     this.data = data;

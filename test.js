@@ -163,16 +163,16 @@ const test = async () => {
   //   console.log(response.data);
   // });
   await axios
-    .post('http://localhost:5000/insert', sampleEntry)
+    .post('http://localhost:5000/insertEntry', sampleEntry)
     .then(response => {
       console.log(response.data);
     });
   await axios
-    .post('http://localhost:5000/insert', sampleEntry2)
+    .post('http://localhost:5000/insertEntry', sampleEntry2)
     .then(response => {
       console.log(response.data);
     });
-  await axios.get('http://localhost:5000/getAll').then(response => {
+  await axios.get('http://localhost:5000/getBlockchain').then(response => {
     console.log(response.data);
   });
 };

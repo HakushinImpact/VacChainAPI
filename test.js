@@ -67,7 +67,7 @@ const data_struct = {
   ]
 };
 
-const sampleEntry1 = { ...data_struct };
+const sampleEntry1 = JSON.parse(JSON.stringify(data_struct));
 sampleEntry1.philhealth_info.isMember = true;
 sampleEntry1.philhealth_info.number = '11-201534404-7';
 sampleEntry1.personal_info.category = 'OFW';
@@ -88,7 +88,7 @@ sampleEntry1.vaccine_info.dosage = '2';
 sampleEntry1.vaccine_info.batch_no = '12345';
 sampleEntry1.vaccine_info.health_facility = 'RHU Kalibo';
 
-const sampleEntry2 = { ...data_struct };
+const sampleEntry2 = JSON.parse(JSON.stringify(data_struct));
 sampleEntry2.philhealth_info.isMember = true;
 sampleEntry2.philhealth_info.number = '11-208975404-7';
 sampleEntry2.personal_info.category = 'OFW';
@@ -110,7 +110,7 @@ sampleEntry2.vaccine_info.dosage = '2';
 sampleEntry2.vaccine_info.batch_no = '12346';
 sampleEntry2.vaccine_info.health_facility = 'RHU Kalibo';
 
-const sampleEntry3 = { ...data_struct };
+const sampleEntry3 = JSON.parse(JSON.stringify(data_struct));
 sampleEntry3.philhealth_info.isMember = true;
 sampleEntry3.philhealth_info.number = '11-208978742-7';
 sampleEntry3.personal_info.category = 'Indigent';
@@ -135,7 +135,7 @@ sampleEntry3.vaccine_info.dosage = '1';
 sampleEntry3.vaccine_info.batch_no = '15846';
 sampleEntry3.vaccine_info.health_facility = 'RHU Kalibo';
 
-const sampleEntry4 = { ...data_struct };
+const sampleEntry4 = JSON.parse(JSON.stringify(data_struct));
 sampleEntry4.philhealth_info.isMember = true;
 sampleEntry4.philhealth_info.number = '11-2016348904-6';
 sampleEntry4.personal_info.category = 'Self Employed';
@@ -160,7 +160,7 @@ sampleEntry4.vaccine_info.dosage = '1';
 sampleEntry4.vaccine_info.batch_no = '15847';
 sampleEntry4.vaccine_info.health_facility = 'RHU Kalibo';
 
-const sampleEntry5 = { ...data_struct };
+const sampleEntry5 = JSON.parse(JSON.stringify(data_struct));
 sampleEntry5.philhealth_info.isMember = true;
 sampleEntry5.philhealth_info.number = '11-2018752124-6';
 sampleEntry5.personal_info.category = 'OFW';
@@ -190,7 +190,7 @@ sampleEntry5.vaccine_info.dosage = '1';
 sampleEntry5.vaccine_info.batch_no = '14147';
 sampleEntry5.vaccine_info.health_facility = 'RHU Kalibo';
 
-const sampleEntry6 = { ...data_struct };
+const sampleEntry6 = JSON.parse(JSON.stringify(data_struct));
 sampleEntry6.philhealth_info.isMember = false;
 sampleEntry6.personal_info.first_name = 'Ermelino';
 sampleEntry6.personal_info.middle_name = 'Tirbano';
@@ -212,7 +212,7 @@ sampleEntry6.vaccine_info.dosage = '2';
 sampleEntry6.vaccine_info.batch_no = '25847';
 sampleEntry6.vaccine_info.health_facility = 'RHU Kalibo';
 
-const sampleEntry7 = { ...data_struct };
+const sampleEntry7 = JSON.parse(JSON.stringify(data_struct));
 sampleEntry7.philhealth_info.isMember = false;
 sampleEntry7.personal_info.first_name = 'Giles';
 sampleEntry7.personal_info.middle_name = 'Sabando';
@@ -240,7 +240,7 @@ sampleEntry7.vaccine_info.name = 'Johnson & Johnson (Jannsen)';
 sampleEntry7.vaccine_info.dosage = '1';
 sampleEntry7.vaccine_info.batch_no = '11267';
 
-const sampleEntry8 = { ...data_struct };
+const sampleEntry8 = JSON.parse(JSON.stringify(data_struct));
 sampleEntry8.philhealth_info.isMember = false;
 sampleEntry8.personal_info.first_name = 'Sintiya';
 sampleEntry8.personal_info.middle_name = 'Ebalagor';
@@ -256,7 +256,7 @@ sampleEntry8.vaccine_info.dosage = '1';
 sampleEntry8.vaccine_info.batch_no = '15947';
 sampleEntry8.vaccine_info.health_facility = 'RHU Kalibo';
 
-const sampleEntry9 = { ...data_struct };
+const sampleEntry9 = JSON.parse(JSON.stringify(data_struct));
 sampleEntry9.philhealth_info.isMember = false;
 sampleEntry9.personal_info.first_name = 'Kumraeala';
 sampleEntry9.personal_info.middle_name = 'Kumpila';
@@ -275,7 +275,7 @@ sampleEntry9.vaccine_info.dosage = '2';
 sampleEntry9.vaccine_info.batch_no = '25888';
 sampleEntry9.vaccine_info.health_facility = 'RHU Kalibo';
 
-const sampleEntry10 = { ...data_struct };
+const sampleEntry10 = JSON.parse(JSON.stringify(data_struct));
 sampleEntry10.philhealth_info.isMember = false;
 sampleEntry10.personal_info.first_name = 'Ella';
 sampleEntry10.personal_info.middle_name = 'Tukina';

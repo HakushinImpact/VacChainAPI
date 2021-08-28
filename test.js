@@ -47,7 +47,7 @@ const data_struct = {
   vaccine_info: [
     {
       name: '',
-      date_of_vaccination: '',
+      date_of_vaccination: Date.now(),
       dosage: '1',
       batch_no: '',
       health_facility: '',

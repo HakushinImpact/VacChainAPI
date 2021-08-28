@@ -52,11 +52,8 @@ app.get('/getEntry', async (req, res) => {
   console.log(chalk.green(`[GET] /getEntry ${res.statusCode}`));
 });
 
-app.get('/getEntries', async (req, res) => {
-  const entries = await VacChainAPI.getEntries(
-    req.query.filter,
-    req.query.limit
-  );
+app.post('/getEntries', async (req, res) => {
+  const entries = await VacChainAPI.getEntries(req.body.filter, req.body.limit);
 
   if (entries === false) {
     res.status(404).send('Not found');

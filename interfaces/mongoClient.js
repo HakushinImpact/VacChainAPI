@@ -113,18 +113,19 @@ const getDocument = async (id, collection = mongoDB_config.collection) => {
  * @param {string} collection - the MongoDB collection to retrieve the documents from
  * @param {Object} filter - an object or array of objects to be used as a filter
  * @param {number} limit - the number of documents to be retrieved
- * @returns empty array if connection failed, else an array of documents
+ * @returns false if connection failed, else an array of documents
  */
 const getDocuments = async (
-  collection = mongoDB_config.collection,
   filter = {},
-  limit = 15
+  limit = 15,
+  collection = mongoDB_config.collection
 ) => {
   const conn = await mongo_client.connect();
   if (!conn.isConnected()) {
     console.log('[MongoDB] RETRIEVE: Connection failed.');
-    return [];
+    return false;
   }
+
   const documents = await conn
     .db()
     .collection(collection)
